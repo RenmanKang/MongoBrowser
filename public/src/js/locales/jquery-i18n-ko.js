@@ -28,12 +28,12 @@ $.i18n.ko = {
 	"You forgot to enter a document": "문서 내용을 입력하세요",
 
 	"Documents" : "문서 수",
-	"Total_doc_size" : "전체 문서 크기",
-	"Average_doc_size" : "편균 문서 크기",
-	"Pre_allocated_size" : "사전 할당 크기",
+	"Total doc size" : "전체 문서 크기",
+	"Average doc size" : "편균 문서 크기",
+	"Pre-allocated size" : "사전 할당 크기",
 	"Indexes" : "인덱스 수",
-	"Total_index_size" : "전체 인덱스 수",
-	"Padding_factor" : "Padding factor",
+	"Total index size" : "전체 인덱스 수",
+	"Padding factor" : "Padding factor",
 	"Extents" : "Extents",
 
 	"+__+": "+__+"

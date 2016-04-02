@@ -1,0 +1,8 @@
+[
+  {
+	"name" : "mongo-browser",
+	"script" : "./bin/www",
+	"exec_mode" : "cluster",
+	"instances" : "1"
+  }
+]

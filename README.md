@@ -78,6 +78,8 @@ $ vi config.js
 ```sh
 $ cd MongoBrowser
 $ node ./bin/www
+or
+$ pm2 start app.json
 ```
 
 ## 6. Screenshot

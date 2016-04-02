@@ -28,12 +28,12 @@ $.i18n.en = {
 	"You forgot to enter a document!": "You forgot to enter a document!",
 
 	"Documents" : "Documents",
-	"Total_doc_size" : "Total doc size",
-	"Average_doc_size" : "Average doc size",
-	"Pre_allocated_size" : "Pre-allocated size",
+	"Total doc size" : "Total doc size",
+	"Average doc size" : "Average doc size",
+	"Pre-allocated size" : "Pre-allocated size",
 	"Indexes" : "Indexes",
-	"Total_index_size" : "Total index size",
-	"Padding_factor" : "Padding factor",
+	"Total index size" : "Total index size",
+	"Padding factor" : "Padding factor",
 	"Extents" : "Extents",
 
 	"+__+": "+__+"
