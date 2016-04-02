@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MongoBrowser</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/lib/bootstrap-3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">MongoBrowser</a>
+        </div>
+    </div>
+</div>
+<div>
+    <div id="content" class= "content" style="">
+        <h1><%= message %></h1>
+        <h2><%= error.status %></h2>
+        <pre><%= error.stack %></pre>
+    </div>
+</div>

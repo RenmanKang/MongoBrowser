@@ -1,0 +1,81 @@
+<div role="tabpanel" class="tab-pane active" id="{{tabId}}">
+	<div class="title-box">
+		<ul class="breadcrumb">
+			<li>{{dbname}}</li>
+			<li class="active"><a href="javascript://" id="{{tabId}}__pop" data-toggle="popover" data-container="body" data-placement="bottom">{{collection}}</a></li>
+		</ul>
+	</div>
+	<div id="{{tabId}}__pop_content" style="display:none;">
+		<table class="table table-condensed table-bordered stats-tb">
+			<tbody>
+			<tr>
+				<th>{{i18n 'Documents'}}</th>
+				<td>{{stats.count}}</td>
+				<th>{{i18n 'Total doc size'}}</th>
+				<td>{{convertBytes stats.size}}</td>
+				<th>{{i18n 'Average doc size'}}</th>
+				<td>{{convertBytes stats.avgObjSize}}</td>
+			</tr>
+			<tr>
+				<th>{{i18n 'Pre-allocated size'}}</th>
+				<td>{{convertBytes stats.storageSize}}</td>
+				<th>{{i18n 'Indexes'}}</th>
+				<td>{{stats.nindexes}}</td>
+				<th>{{i18n 'Total index size'}}</th>
+				<td>{{convertBytes stats.totalIndexSize}}</td>
+			</tr>
+			<tr>
+				<th>{{i18n 'Padding factor'}}</th>
+				<td>{{stats.paddingFactor}}</td>
+				<th>{{i18n 'Extents'}}</th>
+				<td>{{stats.numExtents}}</td>
+				<th></th>
+				<td></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="query-cmd">
+		<select class="selectpicker" id="{{tabId}}__cmd" name="cmd" data-style="btn-default" style="margin-top:6px;">
+			<option value="find">find</option>
+			<option value="count">count</option>
+			<option value="aggregate">aggregate</option>
+			<option value="findOne">find one</option>
+			<option value="insert">insert</option>
+			<option value="update">update</option>
+			<option value="remove">remove</option>
+		</select>
+	</div>
+	<div class="query-box">
+		<button type="button" class="btn btn-xs" id="{{tabId}}__query_btn" title="Condition"><span class="glyphicon glyphicon-info-sign"></span> Condition</button>
+		<textarea class="span9 query" id="{{tabId}}__query" name="query">{
+}</textarea>
+	</div>
+	<div class="doc-box" style="display:none;">
+		<button type="button" class="btn btn-xs" id="{{tabId}}__doc_btn" title="Document"><span class="glyphicon glyphicon-save-file"></span> Document</button>
+		<textarea class="span9 doc" id="{{tabId}}__doc" name="document">{
+}</textarea>
+	</div>
+	<div class="opt-box">
+		<button type="button" class="btn btn-xs" id="{{tabId}}__opt_btn" title="Option"><span class="glyphicon glyphicon-cog"></span> Option</button>
+		<textarea class="span9 opt" id="{{tabId}}__option" name="option">{
+}</textarea>
+	</div>
+	<div class="exec-box">
+		<div id="{{tabId}}__exbtn" class="left" style="text-align:left;">
+			<button type="button" id="{{tabId}}__exec" class="btn btn-xs" title="Execute Query">
+				<span class="glyphicon glyphicon glyphicon-play"></span>
+				Execute Query
+			</button>
+		</div>
+		<div id="{{tabId}}__pg" style="text-align:right;">
+			<button type="button" id="{{tabId}}__prev" class="btn btn-xs" title="Prev"><span class="glyphicon glyphicon-triangle-left"></span></button>
+			<input type="text" id="{{tabId}}__skip" name="skip" value="{{skip}}" class="pg-prev" title="Skip" />
+			<input type="text" id="{{tabId}}__limit" name="limit" value="{{limit}}" class="pg-next" title="Limit" />
+			<button type="button" id="{{tabId}}__next" class="btn btn-xs" title="Next"><span class="glyphicon glyphicon-triangle-right"></span></button>
+		</div>
+	</div>
+	<div class="result-box">
+		<textarea class="span9" id="{{tabId}}__res" name="result" style="display:none;">{{documents}}</textarea>
+	</div>
+</div>

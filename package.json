@@ -1,0 +1,52 @@
+{
+  "name": "MongoBrowser",
+  "version": "0.0.1",
+  "description": "MongoBrowser is a web-based MongoDB management tool",
+  "main": "app.js",
+  "author": {
+    "name": "Renman Kang",
+    "email": "bw.renman@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "mongodb",
+    "MongoBrowser"
+  ],
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "async": "~0.9.0",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.4",
+    "express-session": "~1.10.4",
+    "fs-extra": "~0.26.7",
+    "i18n": "~0.5.0",
+    "log4js": "~0.6.22",
+    "moment": "~2.9.0",
+    "mongodb": "~2.1.3",
+    "node-uuid": "~1.4.3",
+    "pkginfo": "~0.3.0",
+    "serve-favicon": "~2.3.0",
+    "underscore": "~1.8.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-cssshrink": "0.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RenmanKang/MongoBrowser.git"
+  }
+}

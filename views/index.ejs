@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MongoBrowser</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="/dist/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/dist/lib/bootstrap-table/dist/bootstrap-table.min.css" />
+	<link rel="stylesheet" href="/dist/lib/bootstrap-select/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="/dist/lib/jstree/dist/themes/proton/style.min.css" />
+	<link rel="stylesheet" href="/dist/lib/codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="/dist/lib/codemirror/theme/rubyblue.css">
+	<link rel="stylesheet" href="/dist/lib/codemirror/theme/xq-light.css">
+	<link rel="stylesheet" href="/dist/css/style.css" />
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">MongoBrowser</a>
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div class="tree" id="tree">
+		<div class="input-group input-group-sm host-select" style="display:none;">
+			<select class="selectpicker" id="hostid" name="hostid" data-style="btn-info" data-width="294">
+				<option>Loading...</option>
+			</select>
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-info" id="show-hosts-btn" title="<%= __('MongoDB Connections') %>">
+					<span class="glyphicon glyphicon-cog"></span>
+				</button>
+			</span>
+		</div>
+		<div class="input-group input-group-sm srch-box">
+			<input type="text" class="form-control" id="search_path" value=''/>
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-info" id="search-btn" title="<%= __('Search') %>">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-info" id="refresh-btn" title="<%= __('Refresh') %>">
+					<span class="glyphicon glyphicon-refresh"></span>
+				</button>
+			</span>
+		</div>
+		<div id="dbTree"></div>
+		<div id="sidebarResize"></div>
+	</div>
+	<div id="content" class= "content">
+		<div id="alert-div"></div>
+		<div role="tabpanel">
+			<ul class="nav nav-tabs" role="tablist">
+			</ul>
+			<div class="tab-content">
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include ./modals %>
+
+<script src="/dist/js/require.min.js"></script>
+<script>
+requirejs(['app'], function() {
+	var app = new App();
+	app.start('<%= hostId%>');
+});
+</script>
+</body>
+</html>

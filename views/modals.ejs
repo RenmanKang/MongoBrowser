@@ -1,0 +1,155 @@
+<div class="modal fade" id="host-mgr" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="host-mgr-label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="host-mgr-label"><%= __('MongoDB Connections') %></h4>
+			</div>
+			<div class="modal-body">
+				<div id="conn-list">
+					<table class="table table-condensed table-bordered hosts-tb" style="margin-bottom:4px;">
+						<thead>
+						<tr>
+							<th><%= __('Name') %></th>
+							<th><%= __('Address') %></th>
+							<th><%= __('User') %></th>
+							<th></th>
+						</tr>
+						</thead>
+						<tbody id="host-list">
+						</tbody>
+					</table>
+					<div>
+						<a href="javascript://" class="anc-host-name" data-id=""><%= __('New Connection') %></a>
+					</div>
+					<div class="host-btn">
+						<button type="button" class="btn btn-default" data-dismiss="modal"><%= __('Close') %></button>
+					</div>
+				</div>
+				<div id="conn-settings" style="display:none;">
+					<input type="hidden" id="host-mgr-id" />
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" disabled="disabled" style="width:90px;">Name</button>
+						</span>
+						<input type="text" id="host-mgr-name" class="form-control"/>
+					</div>
+					<div class="input-group" style="margin-top:6px;">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" disabled="disabled" style="width:90px;">Host</button>
+						</span>
+						<input type="text" id="host-mgr-host" class="form-control"/>
+					</div>
+					<div class="input-group" style="margin-top:6px;">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" disabled="disabled" style="width:90px;">Port</button>
+						</span>
+						<input type="text" id="host-mgr-port" class="form-control" />
+					</div>
+					<div class="input-group" style="margin-top:6px;">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" disabled="disabled" style="width:90px;">User</button>
+						</span>
+						<input type="text" id="host-mgr-user" class="form-control"/>
+					</div>
+					<div class="input-group" style="margin-top:6px;">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" disabled="disabled" style="width:90px;">Password</button>
+						</span>
+						<input type="password" id="host-mgr-pass" class="form-control"/>
+					</div>
+					<div class="host-btn">
+						<button type="button" class="btn btn-default" id="host-mgr-cls"><%= __('Cancel') %></button>
+						<button type="button" class="btn btn-primary" id="host-mgr-save"><%= __('Save') %></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="del-confirm" tabindex="-1" role="dialog" aria-labelledby="del-model-label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="del-model-label"></h4>
+			</div>
+			<div class="modal-body" id="del-model-body">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><%= __('Cancel') %></button>
+				<button type="button" class="btn btn-primary" id="del-btn"><%= __('Delete') %></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="add-db" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="add-db-label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="add-db-label"><%= __('Create Database') %></h4>
+			</div>
+			<div class="modal-body">
+				<div class="input-group" id="add-db-div">
+					<span class="input-group-btn">
+				        <button class="btn btn-default db-txt" type="button" disabled="disabled">Database</button>
+      				</span>
+					<input type="text" id="add-db-name" class="form-control"/>
+				</div>
+				<div class="input-group" id="add-col-div">
+					<span class="input-group-btn">
+				        <button class="btn btn-default col-txt" type="button" disabled="disabled">Collection</button>
+      				</span>
+					<input type="text" id="add-col-name" class="form-control"/>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><%= __('Cancel') %></button>
+				<button type="button" class="btn btn-primary" id="add-db-btn"><%= __('Save') %></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="add-doc" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="add-doc-label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="add-doc-label"><%= __('Add Document') %></h4>
+			</div>
+			<div class="modal-body">
+				<input type="hidden" name="dbName" id="dbName" />
+				<input type="hidden" name="colName" id="colName" />
+				<form id="add-doc-form">
+					<textarea id="document" name="document">{
+	"_id": ObjectID()
+}</textarea>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><%= __('Cancel') %></button>
+				<button type="button" class="btn btn-primary" id="add-doc-btn"><%= __('Save') %></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="alert-modal-label" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="alert-modal-label"><%= __('Alert') %></h4>
+			</div>
+			<div class="modal-body" id="alert-modal-body">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><%= __('Close') %></button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,8 @@
+[
+	{
+		"id": "6f32ae16-8371-49ea-ae1b-8987e6c50ed4",
+		"name": "local-mongodb",
+		"host": "localhost",
+		"port": 27017
+	}
+]

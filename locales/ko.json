@@ -1,0 +1,33 @@
+{
+  "title": "MongoBrowser",
+  "Add": "등록",
+  "Edit": "수정",
+  "Save": "저장",
+  "Delete": "삭제",
+  "Cancel": "취소",
+  "Search": "검색",
+  "Refresh": "새로고침",
+  "Close": "닫기",
+  "Alert": "알림",
+  "Name": "Name",
+  "Value": "Value",
+  "Action": "작업",
+  "MongoDB Connections": "MongoDB Connections",
+  "Create Database": "데이터베이스 생성",
+  "Add Document": "문서 추가",
+
+  "Documents" : "문서 수",
+  "Total doc size" : "총 문서 크기",
+  "Average doc size" : "평균 문서 크기",
+  "Pre-allocated size" : "저장소 크기",
+  "Indexes" : "인덱스 수",
+  "Total index size" : "총 인덱스 크기",
+  "Padding factor" : "Padding factor",
+  "Extents" : "Extents",
+
+  "MongoDB List": "MongoDB 목록",
+  "MongoDB Host": "MongoDB 호스트",
+  "MongoDB Port": "MongoDB 포트",
+
+  "+__+": "+__+"
+}

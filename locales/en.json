@@ -1,0 +1,33 @@
+{
+  "title": "MongoBrowser",
+  "Add": "Add",
+  "Edit": "Edit",
+  "Save": "Save",
+  "Delete": "Delete",
+  "Cancel": "Cancel",
+  "Search": "Search",
+  "Refresh": "Refresh",
+  "Close": "Close",
+  "Alert": "Alert",
+  "Name": "Name",
+  "Value": "Value",
+  "Action": "Action",
+  "MongoDB Connections": "MongoDB Connections",
+  "Create Database": "Create Database",
+  "Add Document": "Add Document",
+
+  "Documents": "Documents",
+  "Total doc size": "Total doc size",
+  "Average doc size": "Average doc size",
+  "Pre-allocated size": "Pre-allocated size",
+  "Indexes": "Indexes",
+  "Total index size": "Total index size",
+  "Padding factor": "Padding factor",
+  "Extents": "Extents",
+
+  "MongoDB List": "MongoDB List",
+  "MongoDB Host": "MongoDB Host",
+  "MongoDB Port": "MongoDB Port",
+
+  "+__+": "+__+"
+}
