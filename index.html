@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Mongobrowser : Web-based MongoDB management tool">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mongobrowser</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/RenmanKang/MongoBrowser">View on GitHub</a>
+
+          <h1 id="project_title">Mongobrowser</h1>
+          <h2 id="project_tagline">Web-based MongoDB management tool</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/RenmanKang/MongoBrowser/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/RenmanKang/MongoBrowser/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="mongobrowser" class="anchor" href="#mongobrowser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MongoBrowser</h1>
+
+<h1></h1>
+
+<h2>
+<a id="1-introduction" class="anchor" href="#1-introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Introduction</h2>
+
+<p>MongoBrowser is a web-based MongoDB management tool.</p>
+
+<h2>
+<a id="2-prerequisite" class="anchor" href="#2-prerequisite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Prerequisite</h2>
+
+<ul>
+<li>Node.js
+
+<ul>
+<li><a href="https://nodejs.org">https://nodejs.org</a></li>
+</ul>
+</li>
+<li>npm(JavaScript package manager) 
+
+<ul>
+<li><a href="https://github.com/npm/npm">https://github.com/npm/npm</a></li>
+</ul>
+</li>
+<li>Grunt
+
+<ul>
+<li>npm install -g grunt-cli</li>
+</ul>
+</li>
+<li>Bower
+
+<ul>
+<li>npm install -g bower</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="3-installation" class="anchor" href="#3-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Installation</h2>
+
+<ul>
+<li>
+<p>Download MongoBrowser</p>
+
+<ul>
+<li><a href="https://github.com/RenmanKang/MongoBrowser">https://github.com/RenmanKang/MongoBrowser</a></li>
+</ul>
+</li>
+<li><p>Install modules</p></li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">cd</span> MongoBrowser
+$ npm install
+$ bower install
+$ grunt build</pre></div>
+
+<h2>
+<a id="4-setting-up" class="anchor" href="#4-setting-up" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. Setting up</h2>
+
+<ul>
+<li>Change the <code>port</code>, <code>hosts_file</code>, <code>logger filename</code> path, and other settings.</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">cd</span> MongoBrowser/conf
+$ vi config.js
+-----
+    port: 5056,
+    locales: [<span class="pl-s"><span class="pl-pds">'</span>en<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>ko<span class="pl-pds">'</span></span>],
+    cookie: {
+        path <span class="pl-c1">:</span> <span class="pl-s"><span class="pl-pds">'</span>/<span class="pl-pds">'</span></span>,
+        httpOnly <span class="pl-c1">:</span> <span class="pl-c1">true</span>,
+        maxAge: 1000 <span class="pl-k">*</span> 60 <span class="pl-k">*</span> 60 <span class="pl-k">*</span> 24
+    },
+    static: {
+        maxAge: 1000 <span class="pl-k">*</span> 60 <span class="pl-k">*</span> 60 <span class="pl-k">*</span> 24
+    },
+    hosts_file: __dirname + <span class="pl-s"><span class="pl-pds">'</span>/../conf/hosts.json<span class="pl-pds">'</span></span>,
+    connect_options: { // MongoDB connect options
+        auto_reconnect: <span class="pl-c1">true</span>,
+        socketOptions: {connectTimeoutMS: 1000},
+        poolSize: 1
+    },
+    logger: {
+        access: {
+            category: <span class="pl-s"><span class="pl-pds">'</span>access<span class="pl-pds">'</span></span>,
+            <span class="pl-c1">type</span>: <span class="pl-s"><span class="pl-pds">'</span>dateFile<span class="pl-pds">'</span></span>,
+            filename: __dirname+<span class="pl-s"><span class="pl-pds">'</span>/../logs/mongobrowser-access.log<span class="pl-pds">'</span></span>,
+            pattern: <span class="pl-s"><span class="pl-pds">'</span>-yyyy-MM-dd<span class="pl-pds">'</span></span>,
+            level: <span class="pl-s"><span class="pl-pds">'</span>DEBUG<span class="pl-pds">'</span></span>
+        },
+        app: {
+            category: <span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>,
+            <span class="pl-c1">type</span>: <span class="pl-s"><span class="pl-pds">'</span>dateFile<span class="pl-pds">'</span></span>,
+            filename: __dirname+<span class="pl-s"><span class="pl-pds">'</span>/../logs/mongobrowser-app.log<span class="pl-pds">'</span></span>,
+            pattern: <span class="pl-s"><span class="pl-pds">'</span>-yyyy-MM-dd<span class="pl-pds">'</span></span>,
+            level: <span class="pl-s"><span class="pl-pds">'</span>DEBUG<span class="pl-pds">'</span></span>
+        }
+    }
+-----</pre></div>
+
+<h2>
+<a id="5-running-it" class="anchor" href="#5-running-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5. Running It</h2>
+
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">cd</span> MongoBrowser
+$ node ./bin/www</pre></div>
+
+<h2>
+<a id="6-screenshot" class="anchor" href="#6-screenshot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6. Screenshot</h2>
+
+<p><img src="https://raw.githubusercontent.com/RenmanKang/MongoBrowser/master/img/main.png" alt="Main page"></p>
+
+<hr>
+
+<h2>
+<a id="7-reference" class="anchor" href="#7-reference" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. Reference</h2>
+
+<ul>
+<li>
+<p>mongo-express</p>
+
+<ul>
+<li><a href="https://github.com/mongo-express/mongo-express">https://github.com/mongo-express/mongo-express</a></li>
+</ul>
+</li>
+<li>
+<p>Robomongo</p>
+
+<ul>
+<li><a href="https://robomongo.org/">https://robomongo.org/</a></li>
+<li><a href="https://github.com/paralect/robomongo">https://github.com/paralect/robomongo</a></li>
+</ul>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mongobrowser maintained by <a href="https://github.com/RenmanKang">RenmanKang</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
